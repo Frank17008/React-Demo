@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './App'
+import HelloReact from './HelloReact'
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(<HelloReact />, document.querySelector('#root'));
