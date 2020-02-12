@@ -4,6 +4,7 @@
  */
 
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 export default class MenuItem extends Component {
     constructor(props) {
@@ -11,10 +12,24 @@ export default class MenuItem extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
     render() {
-        return <li onClick={this.handleClick}>{this.props.content}</li>;
+        return (
+            <li onClick={this.handleClick}>
+                {this.props.customer}-点了-{this.props.content}
+            </li>
+        );
     }
     handleClick() {
-        console.log(this.props.index);
         this.props.deleteMenu(this.props.index);
     }
 }
+// 校验父组件传递过来的值的类型
+MenuItem.propTypes = {
+    content: PropTypes.string,
+    index: PropTypes.number,
+    deleteMenu: PropTypes.func,
+    customer: PropTypes.string.isRequired
+};
+
+MenuItem.defaultProps = {
+    customer: "VIP客户"
+};
