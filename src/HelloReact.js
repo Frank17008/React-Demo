@@ -1,12 +1,10 @@
-import React, {Component} from 'react'
+/** @format */
 
-class HelloReact extends Component{
-    render(){
-        return(
-            <div>
-                Hello React!
-            </div>
-        )
+import React, { Component } from "react";
+
+class HelloReact extends Component {
+    render() {
+        return <div>Hello React!</div>;
     }
 }
 
