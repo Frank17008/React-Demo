@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { Component, Fragment } from "react";
-
+import MenuItem from "./MenuItem";
 class FoodMenu extends Component {
     constructor(props) {
         super(props);
@@ -27,11 +27,12 @@ class FoodMenu extends Component {
                     <ul>
                         {this.state.menuList.map((menu, index) => {
                             return (
-                                <li
+                                <MenuItem
+                                    content={menu}
                                     key={index}
-                                    onClick={this.deleteMenu.bind(this, index)}>
-                                    {menu}
-                                </li>
+                                    index={index}
+                                    deleteMenu={this.deleteMenu.bind(this)}
+                                />
                             );
                         })}
                     </ul>
