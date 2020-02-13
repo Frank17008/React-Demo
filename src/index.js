@@ -8,5 +8,5 @@ import FoodMenu from "./FoodMenu";
 import LifeCycles from "./LifeCycles";
 
 // ReactDOM.render(<HelloReact />, document.querySelector('#root'));
-// ReactDOM.render(<FoodMenu />, document.querySelector("#root"));
-ReactDOM.render(<LifeCycles />, document.querySelector("#root"));
+ReactDOM.render(<FoodMenu />, document.querySelector("#root"));
+// ReactDOM.render(<LifeCycles />, document.querySelector("#root"));

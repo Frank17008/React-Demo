@@ -11,7 +11,14 @@ export default class MenuItem extends Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
+    // 组件是否更新
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log(nextProps.content, this.props.content);
+        // 优化,防止子组件频繁渲染
+        return nextProps.content !== this.props.content ? true : false;
+    }
     render() {
+        console.log("child-render");
         return (
             <li onClick={this.handleClick}>
                 {this.props.customer}-点了-{this.props.content}
