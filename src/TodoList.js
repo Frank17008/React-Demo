@@ -1,7 +1,11 @@
-/** @format */
+/** @format
+ * Redux todolist的demo
+ */
 import React, { Component } from "react";
 import { Input, Button, List } from "antd";
 import store from "./store/index";
+import { INPUT_CHANGE, ADD_ITEM, DELETE_ITEM } from "./store/actionTypes";
+
 export default class TodoList extends Component {
     constructor(props) {
         super(props);
@@ -39,13 +43,13 @@ export default class TodoList extends Component {
     }
     handleChange(e) {
         store.dispatch({
-            type: "INPUT_CHANGE",
+            type: INPUT_CHANGE,
             value: e.target.value
         });
     }
     handleClick() {
         store.dispatch({
-            type: "ADD_ITEM"
+            type: ADD_ITEM
         });
     }
     // 订阅store state的值发生变化时
@@ -55,7 +59,7 @@ export default class TodoList extends Component {
     }
     deleteItem(index) {
         store.dispatch({
-            type: "DELETE_ITEM",
+            type: DELETE_ITEM,
             index: index
         });
     }
