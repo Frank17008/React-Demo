@@ -2,10 +2,10 @@
  * Redux todolist的demo
  */
 import React, { Component } from "react";
-import { Input, Button, List } from "antd";
+
 import store from "./store/index";
 import { INPUT_CHANGE, ADD_ITEM, DELETE_ITEM } from "./store/actionTypes";
-
+import TodoListUI from "./TodoListUI";
 export default class TodoList extends Component {
     constructor(props) {
         super(props);
@@ -16,29 +16,13 @@ export default class TodoList extends Component {
     }
     render() {
         return (
-            <div>
-                <Input
-                    placeholder='Enter a key word to add'
-                    style={{ width: "200px" }}
-                    value={this.state.inputValue}
-                    onChange={e => this.handleChange(e)}
-                />
-                <Button
-                    type='primary'
-                    style={{ margin: "0 0 10px 10px" }}
-                    onClick={() => this.handleClick()}>
-                    Add
-                </Button>
-                <List
-                    style={{ width: "500px" }}
-                    bordered
-                    dataSource={this.state.list}
-                    renderItem={(item, index) => (
-                        <List.Item onClick={() => this.deleteItem(index)}>
-                            {item}
-                        </List.Item>
-                    )}></List>
-            </div>
+            <TodoListUI
+                inputValue={this.state.inputValue}
+                handleChange={this.handleChange}
+                handleClick={this.handleClick}
+                deleteItem={this.deleteItem}
+                list={this.state.list}
+            />
         );
     }
     handleChange(e) {
