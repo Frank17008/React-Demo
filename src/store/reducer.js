@@ -2,11 +2,11 @@
 // const defaultState = "Hello Redux";
 import { INPUT_CHANGE, ADD_ITEM, DELETE_ITEM } from "./actionTypes";
 const todoList = {
-    inputValue: "",
+    inputValue: "212",
     list: [
-        "早上好,这是Redux Demo",
-        "中午好,这是Redux Demo",
-        "晚上好,这是Redux Demo"
+        "1早上好,这是Redux Demo",
+        "2中午好,这是Redux Demo",
+        "3晚上好,这是Redux Demo"
     ]
 };
 export default (state = todoList, action) => {

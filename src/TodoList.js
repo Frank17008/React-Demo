@@ -17,7 +17,7 @@ export default class TodoList extends Component {
     render() {
         return (
             <TodoListUI
-                inputValue={this.state.inputValue}
+                inputValue={this.props.inputValue}
                 handleChange={this.handleChange}
                 handleClick={this.handleClick}
                 deleteItem={this.deleteItem}
