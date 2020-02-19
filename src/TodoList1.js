@@ -8,26 +8,19 @@ import TodoListUI from "./TodoListUI";
 
 import { connect } from "react-redux";
 
-class TodoList1 extends Component {
-    render() {
-        let {
-            inputValue,
-            handleChange,
-            handleClick,
-            deleteItem,
-            list
-        } = this.props;
-        return (
-            <TodoListUI
-                inputValue={inputValue}
-                handleChange={handleChange}
-                handleClick={handleClick}
-                deleteItem={deleteItem}
-                list={list}
-            />
-        );
-    }
-}
+const TodoList1 = props => {
+    let { inputValue, handleChange, handleClick, deleteItem, list } = props;
+    return (
+        <TodoListUI
+            inputValue={inputValue}
+            handleChange={handleChange}
+            handleClick={handleClick}
+            deleteItem={deleteItem}
+            list={list}
+        />
+    );
+};
+
 // state映射为props  一个从（外部的）state对象到（UI 组件的）props对象的映射关系
 const mapStateToProps = (state, ownProps) => {
     // console.log("1", state, ownProps);
