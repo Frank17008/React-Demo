@@ -4,13 +4,8 @@
 
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-
-function Index() {
-    return <h2>Home Page</h2>;
-}
-function List() {
-    return <h2>List-Page</h2>;
-}
+import Index from "./Pages/Index";
+import List from "./Pages/List";
 
 function AppRouter() {
     return (
@@ -27,7 +22,8 @@ function AppRouter() {
             {/* 定义各个路由渲染的组件 */}
             {/* exact --> 路由精确匹配 */}
             <Route path='/' exact component={Index}></Route>
-            <Route path='/list' component={List}></Route>
+            {/* 路由动态传值,定义规则 */}
+            <Route path='/list/:id' component={List}></Route>
 
             {/* 使用Switch匹配
             <Switch>
