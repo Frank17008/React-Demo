@@ -3,7 +3,7 @@
  */
 
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 function Index() {
     return <h2>Home Page</h2>;
@@ -28,6 +28,17 @@ function AppRouter() {
             {/* exact --> 路由精确匹配 */}
             <Route path='/' exact component={Index}></Route>
             <Route path='/list' component={List}></Route>
+
+            {/* 使用Switch匹配
+            <Switch>
+                <Route path='/list'>
+                    <List />
+                </Route>
+                <Route path='/'>
+                    <Index />
+                </Route>
+            </Switch>
+            */}
         </Router>
     );
 }
