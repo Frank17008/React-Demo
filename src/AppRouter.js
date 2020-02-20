@@ -6,6 +6,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Index from "./Pages/Index";
 import List from "./Pages/List";
+import Home from "./Pages/Home";
 
 function AppRouter() {
     return (
@@ -13,7 +14,7 @@ function AppRouter() {
             {/* 定义路由导航链接 */}
             <ul>
                 <li>
-                    <Link to='/'>Home Page</Link>
+                    <Link to='/'>Index Page</Link>
                 </li>
                 <li>
                     <Link to='/list'>List-Page</Link>
@@ -24,6 +25,8 @@ function AppRouter() {
             <Route path='/' exact component={Index}></Route>
             {/* 路由动态传值,定义规则 */}
             <Route path='/list/:id' component={List}></Route>
+
+            <Route path='/home' component={Home}></Route>
 
             {/* 使用Switch匹配
             <Switch>
