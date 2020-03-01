@@ -23,9 +23,15 @@
 //     }
 // }
 
-// react-hooks写法
+// react-hooks写法  useState
+/**
+ * useState 返回一个数组
+ * 第一项是变量(状态),
+ * 第二项是更改该状态值的函数一般以 set+变量名 命名
+ */
 import React, { useState } from "react";
-export default function Hooks() {
+export default function UseState() {
+    // 解构 赋初值
     const [count, setCount] = useState(0);
     return (
         <div>
