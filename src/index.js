@@ -16,6 +16,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import AppRouter from "./AppRouter";
 import SubRouter from "./SubRouter";
+import Hooks from "./Hooks";
 // ReactDOM.render(<HelloReact />, document.querySelector('#root'));
 // ReactDOM.render(<FoodMenu />, document.querySelector("#root"));
 // ReactDOM.render(<LifeCycles />, document.querySelector("#root"));
@@ -29,4 +30,5 @@ import SubRouter from "./SubRouter";
 //     document.querySelector("#root")
 // );
 // ReactDOM.render(<AppRouter />, document.querySelector("#root"));
-ReactDOM.render(<SubRouter />, document.querySelector("#root"));
+// ReactDOM.render(<SubRouter />, document.querySelector("#root"));
+ReactDOM.render(<Hooks />, document.querySelector("#root"));
