@@ -1,22 +1,45 @@
 /** @format
  * 使用react-redux重写todolist
  */
-import React, { Component } from "react";
+import React, {
+    Component
+} from "react";
 
-import { INPUT_CHANGE, ADD_ITEM, DELETE_ITEM } from "./store/actionTypes";
+import {
+    INPUT_CHANGE,
+    ADD_ITEM,
+    DELETE_ITEM
+} from "./store/actionTypes";
 import TodoListUI from "./TodoListUI";
 
-import { connect } from "react-redux";
+import {
+    connect
+} from "react-redux";
 
-const TodoList1 = props => {
-    let { inputValue, handleChange, handleClick, deleteItem, list } = props;
-    return (
-        <TodoListUI
-            inputValue={inputValue}
-            handleChange={handleChange}
-            handleClick={handleClick}
-            deleteItem={deleteItem}
-            list={list}
+const TodoList1 = (props) => {
+    let {
+        inputValue,
+        handleChange,
+        handleClick,
+        deleteItem,
+        list
+    } = props;
+    return ( <
+        TodoListUI inputValue = {
+            inputValue
+        }
+        handleChange = {
+            handleChange
+        }
+        handleClick = {
+            handleClick
+        }
+        deleteItem = {
+            deleteItem
+        }
+        list = {
+            list
+        }
         />
     );
 };
@@ -36,14 +59,22 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     // console.log("2", dispatch, ownProps);
     return {
         handleChange(e) {
-            dispatch({ type: INPUT_CHANGE, value: e.target.value });
+            dispatch({
+                type: INPUT_CHANGE,
+                value: e.target.value
+            });
         },
         handleClick() {
-            dispatch({ type: ADD_ITEM });
+            dispatch({
+                type: ADD_ITEM
+            });
         },
         deleteItem(index) {
-            dispatch({ type: DELETE_ITEM, index: index });
-        }
+            dispatch({
+                type: DELETE_ITEM,
+                index: index
+            });
+        },
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList1);
